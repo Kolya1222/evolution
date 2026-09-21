@@ -242,7 +242,7 @@ foreach ($tvs->toArray() as $row) {
             break;
     }
     // save value if it was modified
-    if ($tmplvar !== '' && $tmplvar !== $row['default_text']) {
+    if (!is_null($tmplvar) && $tmplvar !== '' && $tmplvar !== $row['default_text']) {
         $tmplvars[$row['id']] = array(
             $row['id'],
             $tmplvar,
